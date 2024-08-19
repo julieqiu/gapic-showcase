@@ -72,9 +72,8 @@ var UpdateUserCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if UpdateUserFromFile != "" {
-			in, err = os.Open(UpdateUserFromFile)
+			in, err := os.Open(UpdateUserFromFile)
 			if err != nil {
 				return err
 			}

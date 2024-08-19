@@ -1464,11 +1464,9 @@ type mockConnectStream struct {
 	t    *testing.T
 	stop bool
 
-	respMu sync.Mutex
-	resps  []*pb.StreamBlurbsResponse
+	resps []*pb.StreamBlurbsResponse
 
-	nextMu sync.Mutex
-	next   int
+	next int
 
 	pb.Messaging_ConnectServer
 }

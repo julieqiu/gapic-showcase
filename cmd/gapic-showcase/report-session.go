@@ -40,9 +40,8 @@ var ReportSessionCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if ReportSessionFromFile != "" {
-			in, err = os.Open(ReportSessionFromFile)
+			in, err := os.Open(ReportSessionFromFile)
 			if err != nil {
 				return err
 			}

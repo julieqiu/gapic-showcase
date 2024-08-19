@@ -62,9 +62,8 @@ var SearchBlurbsCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if SearchBlurbsFromFile != "" {
-			in, err = os.Open(SearchBlurbsFromFile)
+			in, err := os.Open(SearchBlurbsFromFile)
 			if err != nil {
 				return err
 			}

@@ -222,9 +222,8 @@ var RepeatDataPathResourceCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if RepeatDataPathResourceFromFile != "" {
-			in, err = os.Open(RepeatDataPathResourceFromFile)
+			in, err := os.Open(RepeatDataPathResourceFromFile)
 			if err != nil {
 				return err
 			}

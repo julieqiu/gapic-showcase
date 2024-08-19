@@ -74,7 +74,7 @@ func Test_Session_lifecycle(t *testing.T) {
 		t.Error("Expected to get created session.")
 	}
 
-	r, err := s.ListSessions(
+	r, _ := s.ListSessions(
 		context.Background(),
 		&pb.ListSessionsRequest{PageSize: 1, PageToken: ""})
 	if len(r.GetSessions()) != 1 {
@@ -87,7 +87,7 @@ func Test_Session_lifecycle(t *testing.T) {
 		t.Error("List want: non empty next page token")
 	}
 
-	r, err = s.ListSessions(
+	r, _ = s.ListSessions(
 		context.Background(),
 		&pb.ListSessionsRequest{PageSize: 10, PageToken: r.GetNextPageToken()})
 	if len(r.GetSessions()) != 2 {

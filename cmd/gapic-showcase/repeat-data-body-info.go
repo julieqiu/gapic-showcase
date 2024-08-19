@@ -222,9 +222,8 @@ var RepeatDataBodyInfoCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if RepeatDataBodyInfoFromFile != "" {
-			in, err = os.Open(RepeatDataBodyInfoFromFile)
+			in, err := os.Open(RepeatDataBodyInfoFromFile)
 			if err != nil {
 				return err
 			}

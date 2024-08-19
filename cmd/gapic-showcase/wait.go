@@ -106,9 +106,8 @@ var WaitCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if WaitFromFile != "" {
-			in, err = os.Open(WaitFromFile)
+			in, err := os.Open(WaitFromFile)
 			if err != nil {
 				return err
 			}

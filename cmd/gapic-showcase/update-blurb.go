@@ -80,9 +80,8 @@ var UpdateBlurbCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if UpdateBlurbFromFile != "" {
-			in, err = os.Open(UpdateBlurbFromFile)
+			in, err := os.Open(UpdateBlurbFromFile)
 			if err != nil {
 				return err
 			}

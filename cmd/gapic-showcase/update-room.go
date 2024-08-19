@@ -54,9 +54,8 @@ var UpdateRoomCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if UpdateRoomFromFile != "" {
-			in, err = os.Open(UpdateRoomFromFile)
+			in, err := os.Open(UpdateRoomFromFile)
 			if err != nil {
 				return err
 			}

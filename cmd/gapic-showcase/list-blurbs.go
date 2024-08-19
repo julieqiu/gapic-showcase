@@ -48,9 +48,8 @@ var ListBlurbsCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if ListBlurbsFromFile != "" {
-			in, err = os.Open(ListBlurbsFromFile)
+			in, err := os.Open(ListBlurbsFromFile)
 			if err != nil {
 				return err
 			}

@@ -48,9 +48,8 @@ var VerifyEnumCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if VerifyEnumFromFile != "" {
-			in, err = os.Open(VerifyEnumFromFile)
+			in, err := os.Open(VerifyEnumFromFile)
 			if err != nil {
 				return err
 			}

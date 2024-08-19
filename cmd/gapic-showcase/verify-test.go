@@ -42,9 +42,8 @@ var VerifyTestCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if VerifyTestFromFile != "" {
-			in, err = os.Open(VerifyTestFromFile)
+			in, err := os.Open(VerifyTestFromFile)
 			if err != nil {
 				return err
 			}

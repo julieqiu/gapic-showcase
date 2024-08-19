@@ -639,9 +639,6 @@ type streamBlurbsObserver struct {
 	// The stream to send the blurbs.
 	stream BlurbsOutStream
 
-	// Blurb parent to observe.
-	parent string
-
 	// Holds an error that occurred when sending a blurb.
 	mu  sync.Mutex
 	err error

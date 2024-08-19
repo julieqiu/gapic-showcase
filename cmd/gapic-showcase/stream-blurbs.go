@@ -52,9 +52,8 @@ var StreamBlurbsCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if StreamBlurbsFromFile != "" {
-			in, err = os.Open(StreamBlurbsFromFile)
+			in, err := os.Open(StreamBlurbsFromFile)
 			if err != nil {
 				return err
 			}

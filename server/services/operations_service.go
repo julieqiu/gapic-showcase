@@ -93,7 +93,7 @@ func (s *operationsServerImpl) handleSearchBlurbs(in *lropb.GetOperationRequest)
 
 	// TODO(landrito): add some randomization here so that the search blurbs
 	// operation could take multiple get calls to complete.
-	listResp, err := s.messagingServer.FilteredListBlurbs(
+	listResp, _ := s.messagingServer.FilteredListBlurbs(
 		context.Background(),
 		&pb.ListBlurbsRequest{
 			Parent:    req.GetParent(),

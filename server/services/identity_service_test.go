@@ -119,7 +119,7 @@ func Test_User_lifecycle(t *testing.T) {
 		t.Errorf("UpdateUser() = %+v, want %+v", got, updated)
 	}
 
-	r, err := s.ListUsers(
+	r, _ := s.ListUsers(
 		context.Background(),
 		&pb.ListUsersRequest{PageSize: 1, PageToken: ""})
 	if len(r.GetUsers()) != 1 {

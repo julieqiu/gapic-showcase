@@ -46,9 +46,8 @@ var ListTestsCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if ListTestsFromFile != "" {
-			in, err = os.Open(ListTestsFromFile)
+			in, err := os.Open(ListTestsFromFile)
 			if err != nil {
 				return err
 			}

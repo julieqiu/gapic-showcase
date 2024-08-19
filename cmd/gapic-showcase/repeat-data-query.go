@@ -222,9 +222,8 @@ var RepeatDataQueryCmd = &cobra.Command{
 	},
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 
-		in := os.Stdin
 		if RepeatDataQueryFromFile != "" {
-			in, err = os.Open(RepeatDataQueryFromFile)
+			in, err := os.Open(RepeatDataQueryFromFile)
 			if err != nil {
 				return err
 			}
